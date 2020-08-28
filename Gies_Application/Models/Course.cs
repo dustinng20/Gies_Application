@@ -9,17 +9,12 @@ namespace Gies_Application.Models
 {
 	public class Course
 	{
-		public Course()
-		{
-			this.TraineeInfoes = new HashSet<TraineeInfo>();
-		}
-		public int Id { get; set; }
-		public string Name { get; set; }
-		public string Description { get; set; }
-		public ICollection<Topic> Topics { get; set; }
-		[Display(Name = "Trainees")]
-		public ICollection<TraineeInfo> TraineeInfoes { get; set; }
-
-		public CourseCategory CourseCategory { get; set; }
-	}
+    [Display(Name = "Number")]
+    public int Id { get; set; }
+    [Required]
+    [Display(Name = "Course Name")]
+    public string Topic { get; set; }
+    public int Credits { get; set; }
+    public virtual ICollection<Enrollment> Enrollments { get; set; }
+  }
 }
