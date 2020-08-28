@@ -9,12 +9,13 @@ namespace Gies_Application.Models
 {
 	public class Course
 	{
-    [Display(Name = "Number")]
     public int Id { get; set; }
     [Required]
-    [Display(Name = "Course Name")]
-    public string Topic { get; set; }
-    public int Credits { get; set; }
-    public virtual ICollection<Enrollment> Enrollments { get; set; }
+    [DisplayName("Course Name")]
+    public string Name { get; set; }
+    public int CategoryId { get; set; }
+    public Category Category { get; set; }
+    public int TopicId { get; set; }
+    public Topic Topic { get; set; }
   }
 }

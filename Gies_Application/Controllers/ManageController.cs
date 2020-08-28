@@ -7,6 +7,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Gies_Application.Models;
+using TestRole.Controllers;
 
 namespace Gies_Application.Controllers
 {
