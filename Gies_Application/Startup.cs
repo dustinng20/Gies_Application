@@ -16,10 +16,10 @@ namespace Gies_Application
     // In this method we will create default User roles and Admin user for login    
     private void createRolesandUsers()
     {
-      ApplicationDbContext context = new ApplicationDbContext();
+      ApplicationDbContext1 context = new ApplicationDbContext1();
 
       var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
-      var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+      var UserManager = new UserManager<ApplicationUser1>(new UserStore<ApplicationUser1>(context));
 
 
       // In Startup iam creating first Admin Role and creating a default Admin User     
@@ -33,7 +33,7 @@ namespace Gies_Application
 
         //Here we create a Admin super user who will maintain the website                   
 
-        var user = new ApplicationUser();
+        var user = new ApplicationUser1();
         user.UserName = "Admin";
         user.Email = "Admin@gmail.com";
 

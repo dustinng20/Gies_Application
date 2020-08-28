@@ -186,9 +186,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202008281721035_d.cs" />
-    <Compile Include="Migrations\202008281721035_d.Designer.cs">
-      <DependentUpon>202008281721035_d.cs</DependentUpon>
+    <Compile Include="Migrations\202008281816594_dtyu.cs" />
+    <Compile Include="Migrations\202008281816594_dtyu.designer.cs">
+      <DependentUpon>202008281816594_dtyu.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -305,10 +305,11 @@
     <Content Include="Views\Trainers\Edit.cshtml" />
     <Content Include="Views\Trainers\Delete.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\TrainerTopics\Index.cshtml" />
+    <Content Include="Views\TrainerTopics\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\TrainerTopics\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -324,8 +325,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202008281721035_d.resx">
-      <DependentUpon>202008281721035_d.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202008281816594_dtyu.resx">
+      <DependentUpon>202008281816594_dtyu.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Gies_Application.Models.TrainerTopic>
+
+@{
+	ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@if (User.IsInRole("TrainingStaff"))
+{
+	<p>
+		@Html.ActionLink("Assign Trainer To Topic", "Create")
+	</p>
+	<table class="table">
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.Trainer)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Topic)
+			</th>
+			<th></th>
+		</tr>
+
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.Trainer.UserName)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Topic.Name)
+				</td>
+			</tr>
+		}
+
+	</table>
+}
+@if (User.IsInRole("Trainer"))
+{<table class="table">
+		<tr>
+			<th>
+				@Html.DisplayNameFor(item => item.Topic)
+			</th>
+			<th></th>
+		</tr>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.Topic.Name)
+				</td>
+			</tr>
+		}
+	</table>
+}
