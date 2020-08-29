@@ -190,6 +190,14 @@
     <Compile Include="Migrations\202008281816594_dtyu.designer.cs">
       <DependentUpon>202008281816594_dtyu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008291453418_ha.cs" />
+    <Compile Include="Migrations\202008291453418_ha.designer.cs">
+      <DependentUpon>202008291453418_ha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008291510561_haha.cs" />
+    <Compile Include="Migrations\202008291510561_haha.designer.cs">
+      <DependentUpon>202008291510561_haha.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext1.cs" />
@@ -198,7 +206,6 @@
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\CourseCategory.cs" />
     <Compile Include="Models\Enrollment.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Topic.cs" />
     <Compile Include="Models\Trainee.cs" />
@@ -327,6 +334,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202008281816594_dtyu.resx">
       <DependentUpon>202008281816594_dtyu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008291453418_ha.resx">
+      <DependentUpon>202008291453418_ha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008291510561_haha.resx">
+      <DependentUpon>202008291510561_haha.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

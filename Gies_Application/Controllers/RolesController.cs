@@ -9,10 +9,10 @@ namespace Gies_Application.Controllers
 {
   public class RolesController : Controller
   {
-    ApplicationDbContext context;
+    ApplicationDbContext1 context;
     public RolesController()
     {
-      context = new ApplicationDbContext();
+      context = new ApplicationDbContext1();
     }
     // GET: Roles
     public ActionResult Index()
@@ -40,8 +40,8 @@ namespace Gies_Application.Controllers
       if (User.Identity.IsAuthenticated)
       {
         var user = User.Identity;
-        ApplicationDbContext context = new ApplicationDbContext();
-        var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+        ApplicationDbContext1 context = new ApplicationDbContext1();
+        var UserManager = new UserManager<ApplicationUser1>(new UserStore<ApplicationUser1>(context));
         var s = UserManager.GetRoles(user.GetUserId());
         if (s[0].ToString() == "Admin")
         {
