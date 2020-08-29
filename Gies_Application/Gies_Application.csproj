@@ -186,17 +186,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202008281816594_dtyu.cs" />
-    <Compile Include="Migrations\202008281816594_dtyu.designer.cs">
-      <DependentUpon>202008281816594_dtyu.cs</DependentUpon>
+    <Compile Include="Migrations\202008291925175_admin.cs" />
+    <Compile Include="Migrations\202008291925175_admin.designer.cs">
+      <DependentUpon>202008291925175_admin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202008291453418_ha.cs" />
-    <Compile Include="Migrations\202008291453418_ha.designer.cs">
-      <DependentUpon>202008291453418_ha.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008291510561_haha.cs" />
-    <Compile Include="Migrations\202008291510561_haha.designer.cs">
-      <DependentUpon>202008291510561_haha.cs</DependentUpon>
+    <Compile Include="Migrations\202008291927178_admin1.cs" />
+    <Compile Include="Migrations\202008291927178_admin1.designer.cs">
+      <DependentUpon>202008291927178_admin1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -233,6 +229,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\Gies-Applications - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\GiesApplication - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -332,14 +329,11 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202008281816594_dtyu.resx">
-      <DependentUpon>202008281816594_dtyu.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202008291925175_admin.resx">
+      <DependentUpon>202008291925175_admin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008291453418_ha.resx">
-      <DependentUpon>202008291453418_ha.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008291510561_haha.resx">
-      <DependentUpon>202008291510561_haha.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202008291927178_admin1.resx">
+      <DependentUpon>202008291927178_admin1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

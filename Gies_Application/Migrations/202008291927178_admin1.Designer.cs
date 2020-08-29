@@ -7,13 +7,13 @@ namespace Gies_Application.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class dtyu : IMigrationMetadata
+    public sealed partial class admin1 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(dtyu));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(admin1));
         
         string IMigrationMetadata.Id
         {
-            get { return "202008281816594_dtyu"; }
+            get { return "202008291927178_admin1"; }
         }
         
         string IMigrationMetadata.Source

@@ -12,8 +12,9 @@ namespace Gies_Application
     public void Configuration(IAppBuilder app)
     {
       ConfigureAuth(app);
+      createRolesandUsers();
     }
-    // In this method we will create default User roles and Admin user for login    
+
     private void createRolesandUsers()
     {
       ApplicationDbContext1 context = new ApplicationDbContext1();
@@ -26,30 +27,26 @@ namespace Gies_Application
       if (!roleManager.RoleExists("Admin"))
       {
 
-        // first we create Admin rool    
+        // first we create Admin role    
         var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
         role.Name = "Admin";
         roleManager.Create(role);
-
-        //Here we create a Admin super user who will maintain the website                   
-
-        var user = new ApplicationUser1();
-        user.UserName = "Admin";
-        user.Email = "Admin@gmail.com";
-
-        string userPWD = "a";
-
-        var chkUser = UserManager.Create(user, userPWD);
-
-        //Add default User to Role Admin    
-        if (chkUser.Succeeded)
-        {
-          var result1 = UserManager.AddToRole(user.Id, "Admin");
-
-        }
       }
 
-      // Create Manager role     
+      var user = new ApplicationUser1();
+      user.UserName = "Admin";
+      user.Email = "admin@gmail.com";
+
+      string userPassword = "Abc123";
+
+      var checkUser = UserManager.Create(user, userPassword);
+      if (checkUser.Succeeded)
+      {
+        var result1 = UserManager.AddToRole(user.Id, "Admin");
+      }
+
+
+      // creating Creating TrainingStaff role     
       if (!roleManager.RoleExists("Staff"))
       {
         var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
@@ -58,7 +55,7 @@ namespace Gies_Application
 
       }
 
-      // Create Trainer role     
+      // creating Creating Trainer role     
       if (!roleManager.RoleExists("Trainer"))
       {
         var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
@@ -66,7 +63,7 @@ namespace Gies_Application
         roleManager.Create(role);
 
       }
-      // Create Trainee role   
+      // creating Creating Trainee role     
       if (!roleManager.RoleExists("Trainee"))
       {
         var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();

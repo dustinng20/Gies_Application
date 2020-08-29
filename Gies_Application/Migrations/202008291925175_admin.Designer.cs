@@ -7,13 +7,13 @@ namespace Gies_Application.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class ha : IMigrationMetadata
+    public sealed partial class admin : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ha));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(admin));
         
         string IMigrationMetadata.Id
         {
-            get { return "202008291453418_ha"; }
+            get { return "202008291925175_admin"; }
         }
         
         string IMigrationMetadata.Source
