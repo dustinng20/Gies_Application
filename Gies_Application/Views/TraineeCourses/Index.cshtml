@@ -5,7 +5,7 @@
 }
 
 <h2>Index</h2>
-@if (User.IsInRole("TrainingStaff"))
+@if (User.IsInRole("Staff"))
 {
 	<p>
 		@Html.ActionLink("Assign Trainee to Course", "Create")

@@ -148,9 +148,9 @@ namespace TestRole.Controllers
 
 				return View();
 			}
-			if (User.IsInRole("TrainingStaff"))
+			if (User.IsInRole("Staff"))
 			{
-				ViewBag.Name = new SelectList(context.Roles.Where(u => !u.Name.Contains("Admin") && !u.Name.Contains("TrainingStaff") && !u.Name.Contains("Trainer")).ToList(), "Name", "Name");
+				ViewBag.Name = new SelectList(context.Roles.Where(u => !u.Name.Contains("Admin") && !u.Name.Contains("Staff") && !u.Name.Contains("Trainer")).ToList(), "Name", "Name");
 				return View();
 			}
 

@@ -9,6 +9,7 @@ namespace Gies_Application.Models
   {
     public ApplicationDbContext1()
         : base("DefaultConnection", throwIfV1Schema: false)
+
     {
     }
     public DbSet<Course> Courses { get; set; }
@@ -17,7 +18,6 @@ namespace Gies_Application.Models
     public DbSet<Trainer> Trainers { get; set; }
     public DbSet<Trainee> Trainees { get; set; }
     public DbSet<Topic> Topics { get; set; }
-    public DbSet<Enrollment> Enrollments { get; set; }
     public DbSet<CourseCategory> CourseCategories { get; set; }
 
     public DbSet<TrainerTopic> TrainerTopics { get; set; }

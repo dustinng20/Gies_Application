@@ -2,54 +2,98 @@
 @{
 	ViewBag.TiTle = "Index";
 }
-<h3>Trainee</h3>
-<div class="panel-body">
-	<table class="table table-hover table-bordered table-condensed" id="Index">
-		<thead>
-			<tr>
-				<td><b>UserName</b></td>
-				<td><b>Email</b></td>
-				<td><b>Roles</b></td>
-				<td><b></b></td>
-				<td><b></b></td>
-			</tr>
-		</thead>
-		@foreach (var user in Model.Trainee)
-		{
-			<tr>
-				<td>@user.UserName </td>
-				<td> @user.Email</td>
-				<td> @user.RoleName</td>
-				@*<td>@Html.ActionLink("Edit", "Edit", new { controller = "trainees" }, new { id = user.UserId })</td>*@
-				<td>@Html.ActionLink("Edit", "Edit", "Trainees", new { id = user.UserId }, null)</td>
-				<td>@Html.ActionLink("Delete", "Delete", "Trainers", new { id = user.UserId }, null)</td>
-			</tr>
-		}
-	</table>
-</div>
-<h3>Trainer</h3>
-<div class="panel-body">
-	<table class="table table-hover table-bordered table-condensed" id="Index">
-		<thead>
-			<tr>
-				<td><b>Username</b></td>
-				<td><b>Email</b></td>
-				<td><b>Roles</b></td>
-				<td><b></b></td>
-				<td><b></b></td>
-			</tr>
-		</thead>
-		@foreach (var user in Model.Trainer)
-		{
-			<tr>
-				<td>@user.UserName </td>
-				<td> @user.Email</td>
-				<td> @user.RoleName</td>
-				@*<td>@Html.ActionLink("Edit", "Edit", new { id = user.UserId })</td>*@
-				<td>@Html.ActionLink("Edit", "Edit", "Trainers", new { id = user.UserId }, null)</td>
-				<td>@Html.ActionLink("Delete", "Delete", "Trainers", new { id = user.UserId }, null)</td>
-			</tr>
-		}
-	</table>
-</div>
+@if (Request.IsAuthenticated &&  User.IsInRole("Admin"))
+{
+	<h3>Staff</h3>
+	<div class="panel-body">
+		<table class="table table-hover table-bordered table-condensed" id="Index">
+			<thead>
+				<tr>
+					<td><b>Username</b></td>
+					<td><b>Email</b></td>
+					<td><b>Roles</b></td>
+					<td><b></b></td>
+					<td><b></b></td>
+				</tr>
+			</thead>
+			@foreach (var user in Model.Staff)
+			{
+				<tr>
+					<td>@user.UserName </td>
+					<td> @user.Email</td>
+					<td> @user.RoleName</td>
+					@*<td>@Html.ActionLink("Edit", "Edit", new { id = user.UserId })</td>*@
+					@if (Request.IsAuthenticated && User.IsInRole("Admin"))
+					{
+					<td>@Html.ActionLink("Edit", "Edit", "Trainers", new { id = user.UserId }, null)</td>
+					<td>@Html.ActionLink("Delete", "Delete", "Trainers", new { id = user.UserId }, null)</td>
+					}
+				</tr>
+			}
+		</table>
+	</div>
+}
+@if (Request.IsAuthenticated && User.IsInRole("Staff") || User.IsInRole("Trainee"))
+{
+	<h3>Trainee</h3>
+	<div class="panel-body">
+		<table class="table table-hover table-bordered table-condensed" id="Index">
+			<thead>
+				<tr>
+					<td><b>UserName</b></td>
+					<td><b>Email</b></td>
+					<td><b>Roles</b></td>
+					<td><b></b></td>
+					<td><b></b></td>
+				</tr>
+			</thead>
+			@foreach (var user in Model.Trainee)
+			{
+				<tr>
+					<td>@user.UserName </td>
+					<td> @user.Email</td>
+					<td> @user.RoleName</td>
+					@if (Request.IsAuthenticated && User.IsInRole("Staff"))
+					{
+						
+						<td>@Html.ActionLink("Delete", "Delete", "Trainers", new { id = user.UserId }, null)</td>
+					}
+					<td>@Html.ActionLink("Edit", "Edit", "Trainers", new { id = user.UserId }, null)</td>
+				</tr>
+			}
+		</table>
+	</div>
+}
+@if (Request.IsAuthenticated && User.IsInRole("Staff") || User.IsInRole("Trainer") || User.IsInRole("Admin"))
+{
+	<h3>Trainer</h3>
+	<div class="panel-body">
+		<table class="table table-hover table-bordered table-condensed" id="Index">
+			<thead>
+				<tr>
+					<td><b>Username</b></td>
+					<td><b>Email</b></td>
+					<td><b>Roles</b></td>
+					<td><b></b></td>
+					<td><b></b></td>
+				</tr>
+			</thead>
+			@foreach (var user in Model.Trainer)
+			{
+				<tr>
+					<td>@user.UserName </td>
+					<td> @user.Email</td>
+					<td> @user.RoleName</td>
+					@*<td>@Html.ActionLink("Edit", "Edit", new { id = user.UserId })</td>*@
+					<td>@Html.ActionLink("Edit", "Edit", "Trainers", new { id = user.UserId }, null)</td>
+					@if (Request.IsAuthenticated && User.IsInRole("Admin") || User.IsInRole("Staff"))
+					{
+						
+						<td>@Html.ActionLink("Delete", "Delete", "Trainers", new { id = user.UserId }, null)</td>
+					}
+				</tr>
+			}
+		</table>
+	</div>
+}
 

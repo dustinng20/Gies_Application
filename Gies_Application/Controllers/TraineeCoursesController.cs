@@ -22,7 +22,7 @@ namespace Gies_Application.Controllers
 
     public ActionResult Index()
     {
-      if (User.IsInRole("TrainingStaff"))
+      if (User.IsInRole("Staff"))
       {
         var traineecourses = _context.TraineeCourses.Include(t => t.Course).Include(t => t.Trainee).ToList();
         return View(traineecourses);

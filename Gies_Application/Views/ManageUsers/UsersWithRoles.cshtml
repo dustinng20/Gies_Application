@@ -10,7 +10,7 @@
 			<b>Users with Roles</b>
 		</h3>
 	</div>
-	@if (Request.IsAuthenticated && User.IsInRole("Admin"))
+	@if (Request.IsAuthenticated && User.IsInRole("Admin") || User.IsInRole("Staff"))
 	{
 		<p class="text-primary m-0 font-weight-bold">
 			@Html.ActionLink("New user", "Register", "Account")

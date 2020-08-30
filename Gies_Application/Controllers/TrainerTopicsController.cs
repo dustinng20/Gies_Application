@@ -22,7 +22,7 @@ namespace FPT_Training_System.Controllers
 
     public ActionResult Index()
     {
-      if (User.IsInRole("TrainingStaff"))
+      if (User.IsInRole("Staff"))
       {
         var trainertopics = _context.TrainerTopics.Include(t => t.Topic).Include(t => t.Trainer).ToList();
         return View(trainertopics);

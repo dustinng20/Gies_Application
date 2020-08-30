@@ -10,6 +10,7 @@
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            ContextKey = "Gies_Application.Models.ApplicationDbContext1";
         }
 
         protected override void Seed(Gies_Application.Models.ApplicationDbContext1 context)

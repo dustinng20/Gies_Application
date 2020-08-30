@@ -15,6 +15,7 @@ namespace Gies_Application.ViewModels
     public int Phone { get; set; }
     public List<ManagerStaffViewModel> Trainee { get; set; }
     public List<ManagerStaffViewModel> Trainer { get; set; }
+    public List<ManagerStaffViewModel> Staff { get; set; }
     public object[] Id { get; internal set; }
   }
 }
