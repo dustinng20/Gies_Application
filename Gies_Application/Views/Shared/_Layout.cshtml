@@ -44,7 +44,7 @@
 								@if (Request.IsAuthenticated && User.IsInRole("Trainee"))
 								{
 
-
+									<li>@Html.ActionLink("Manage Course", "Index", "Courses")</li>
 									<li>@Html.ActionLink("Manage Accounts", "Index", "ManagerStaffViewModels")</li>
 									<li>@Html.ActionLink("Trainee Course", "Index", "TraineeCourses")</li>
 
