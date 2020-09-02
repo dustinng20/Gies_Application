@@ -11,10 +11,10 @@ namespace FPT_Training_System.Controllers
     private ApplicationDbContext1 db = new ApplicationDbContext1();
     [Authorize(Roles = "Staff, Trainee")]
     // GET: Courses
-    public ActionResult Index()
+    public ActionResult Index(string Searching)
     {
-      var courses = db.Courses.Include(c => c.Category).Include(c => c.Topic);
-      return View(courses.ToList());
+      return View(db.Courses.Where(x => x.Name.Contains(Searching) || Searching == null).ToList());
+
     }
     [Authorize(Roles = "Staff")]
     // GET: Courses/Details/5

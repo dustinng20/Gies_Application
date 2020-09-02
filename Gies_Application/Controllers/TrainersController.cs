@@ -52,7 +52,7 @@ namespace FPT_Training_System.Controllers
 
 			return View(trainer);
 		}
-		[Authorize(Roles = "Admin")]
+		[Authorize(Roles = CustomRole.AdminOrTrainer)]
 
 		//GET: Trainers/Edit/5
 		public ActionResult Edit(string id)

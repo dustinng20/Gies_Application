@@ -211,6 +211,62 @@
     <Compile Include="Migrations\202009021428417_trainee.designer.cs">
       <DependentUpon>202009021428417_trainee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009021936332_traines.cs" />
+    <Compile Include="Migrations\202009021936332_traines.designer.cs">
+      <DependentUpon>202009021936332_traines.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009021939354_traines1.cs" />
+    <Compile Include="Migrations\202009021939354_traines1.designer.cs">
+      <DependentUpon>202009021939354_traines1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009021944289_traines12.cs" />
+    <Compile Include="Migrations\202009021944289_traines12.designer.cs">
+      <DependentUpon>202009021944289_traines12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009021947299_traines123.cs" />
+    <Compile Include="Migrations\202009021947299_traines123.designer.cs">
+      <DependentUpon>202009021947299_traines123.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009021949047_traines1234.cs" />
+    <Compile Include="Migrations\202009021949047_traines1234.designer.cs">
+      <DependentUpon>202009021949047_traines1234.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009021958336_traines12345.cs" />
+    <Compile Include="Migrations\202009021958336_traines12345.designer.cs">
+      <DependentUpon>202009021958336_traines12345.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009022002098_traines123456.cs" />
+    <Compile Include="Migrations\202009022002098_traines123456.designer.cs">
+      <DependentUpon>202009022002098_traines123456.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009022010008_traines1234567.cs" />
+    <Compile Include="Migrations\202009022010008_traines1234567.designer.cs">
+      <DependentUpon>202009022010008_traines1234567.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009022012510_traineee.cs" />
+    <Compile Include="Migrations\202009022012510_traineee.designer.cs">
+      <DependentUpon>202009022012510_traineee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009022018110_t.cs" />
+    <Compile Include="Migrations\202009022018110_t.designer.cs">
+      <DependentUpon>202009022018110_t.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009022024103_h.cs" />
+    <Compile Include="Migrations\202009022024103_h.designer.cs">
+      <DependentUpon>202009022024103_h.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009022030527_k.cs" />
+    <Compile Include="Migrations\202009022030527_k.designer.cs">
+      <DependentUpon>202009022030527_k.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009022037064_km.cs" />
+    <Compile Include="Migrations\202009022037064_km.designer.cs">
+      <DependentUpon>202009022037064_km.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009022039253_kmk.cs" />
+    <Compile Include="Migrations\202009022039253_kmk.designer.cs">
+      <DependentUpon>202009022039253_kmk.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext1.cs" />
@@ -218,6 +274,7 @@
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\CourseCategory.cs" />
+    <Compile Include="Models\CustomRole.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Topic.cs" />
     <Compile Include="Models\Trainee.cs" />
@@ -459,6 +516,48 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202009021428417_trainee.resx">
       <DependentUpon>202009021428417_trainee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009021936332_traines.resx">
+      <DependentUpon>202009021936332_traines.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009021939354_traines1.resx">
+      <DependentUpon>202009021939354_traines1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009021944289_traines12.resx">
+      <DependentUpon>202009021944289_traines12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009021947299_traines123.resx">
+      <DependentUpon>202009021947299_traines123.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009021949047_traines1234.resx">
+      <DependentUpon>202009021949047_traines1234.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009021958336_traines12345.resx">
+      <DependentUpon>202009021958336_traines12345.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009022002098_traines123456.resx">
+      <DependentUpon>202009022002098_traines123456.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009022010008_traines1234567.resx">
+      <DependentUpon>202009022010008_traines1234567.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009022012510_traineee.resx">
+      <DependentUpon>202009022012510_traineee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009022018110_t.resx">
+      <DependentUpon>202009022018110_t.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009022024103_h.resx">
+      <DependentUpon>202009022024103_h.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009022030527_k.resx">
+      <DependentUpon>202009022030527_k.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009022037064_km.resx">
+      <DependentUpon>202009022037064_km.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009022039253_kmk.resx">
+      <DependentUpon>202009022039253_kmk.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

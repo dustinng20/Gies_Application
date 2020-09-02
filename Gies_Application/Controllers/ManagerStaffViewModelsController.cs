@@ -61,16 +61,15 @@ namespace Gies_Application.Controllers
 			return View(model);
 
 		}
-		[Authorize(Roles = "Staff, Admin, Trainer, Trainee")]
 
-		public ActionResult AccountInfo()
-		{
-			var userId = User.Identity.GetUserId();
-			var user = _context.Users.SingleOrDefault(u => u.Id == userId);
-			var role = user.Roles.FirstOrDefault();
+		//public ActionResult AccountInfo()
+		//{
+		//	var userId = User.Identity.GetUserId();
+		//	var user = _context.Users.SingleOrDefault(u => u.Id == userId);
+		//	var role = user.Roles.FirstOrDefault();
 
 
-			return View();
-		}
+		//	return View();
+		//}
 	}
 }

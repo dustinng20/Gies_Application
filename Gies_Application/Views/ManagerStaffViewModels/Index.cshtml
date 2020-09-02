@@ -49,17 +49,18 @@
 			</thead>
 			@foreach (var user in Model.Trainee)
 			{
-				<tr>
-					<td>@user.UserName </td>
-					<td> @user.Email</td>
-					<td> @user.RoleName</td>
-					@if (Request.IsAuthenticated && User.IsInRole("Staff"))
-					{
-						
-						<td>@Html.ActionLink("Delete", "Delete", "Trainers", new { id = user.UserId }, null)</td>
-					}
-					<td>@Html.ActionLink("Edit", "Edit", "Trainers", new { id = user.UserId }, null)</td>
-				</tr>
+		<tr>
+			<td>@user.UserName </td>
+			<td> @user.Email</td>
+			<td> @user.RoleName</td>
+			<td>@Html.ActionLink("Edit", "Edit", "Trainers", new { id = user.UserId }, null)</td>
+
+			@if (Request.IsAuthenticated && User.IsInRole("Staff"))
+			{
+
+				<td>@Html.ActionLink("Delete", "Delete", "Trainers", new { id = user.UserId }, null)</td>
+			}
+		</tr>
 			}
 		</table>
 	</div>
