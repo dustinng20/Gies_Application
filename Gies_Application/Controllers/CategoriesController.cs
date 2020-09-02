@@ -13,9 +13,10 @@ namespace Gies_Application.Controllers
     private ApplicationDbContext1 db = new ApplicationDbContext1();
 
     // GET: Categories
-    public ActionResult Index()
+    [Authorize(Roles ="Staff")]
+    public ActionResult Index(string Searching)
     {
-      return View(db.Categories.ToList());
+      return View(db.Categories.Where(x => x.Name.Contains(Searching) || Searching == null).ToList());
     }
 
     // GET: Categories/Details/5
@@ -32,7 +33,7 @@ namespace Gies_Application.Controllers
       }
       return View(category);
     }
-
+    [Authorize(Roles = "Staff")]
     // GET: Categories/Create
     [HttpGet]
     public ActionResult Create()
@@ -44,15 +45,25 @@ namespace Gies_Application.Controllers
     [HttpPost]
     public ActionResult Create(Category category)
     {
-      if (!ModelState.IsValid)
+      if (ModelState.IsValid)
       {
-        return RedirectToAction("Create");
-      }
-      db.Categories.Add(category);
-      db.SaveChanges();
-      return RedirectToAction("Index");
-    }
+        if (db.Categories.Any(ac => ac.Name.Equals(category.Name)))
+        {
+          ModelState.AddModelError("", "There is already one like that");
+          return View(category);
+        }
 
+        else
+        {
+          db.Categories.Add(category);
+          db.SaveChanges();
+          return RedirectToAction("Index");
+        }
+      }
+
+      return View(category);
+    }
+    [Authorize(Roles = "Staff")]
     // GET: Categories/Edit/5
     [HttpGet]
     public ActionResult Edit(int id)
@@ -82,7 +93,7 @@ namespace Gies_Application.Controllers
       db.SaveChanges();
       return RedirectToAction("Index");
     }
-
+    [Authorize(Roles = "Staff")]
     // GET: Categories/Delete/5
     [HttpGet]
     public ActionResult Delete(int id)

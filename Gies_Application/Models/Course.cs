@@ -10,7 +10,8 @@ namespace Gies_Application.Models
 	public class Course
 	{
     public int Id { get; set; }
-    [Required]
+		public string CourseId { get; set; }
+		[Required]
     [DisplayName("Course Name")]
     public string Name { get; set; }
     public int CategoryId { get; set; }

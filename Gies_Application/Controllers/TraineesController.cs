@@ -14,7 +14,7 @@ namespace Gies_Application.Controllers
   public class TraineesController : Controller
   {
     private ApplicationDbContext1 db = new ApplicationDbContext1();
-
+    [Authorize(Roles = "Staff")]
     // GET: Trainees
     public ActionResult Index()
     {
@@ -35,7 +35,7 @@ namespace Gies_Application.Controllers
       }
       return View(trainee);
     }
-
+    [Authorize(Roles = "Staff")]
     // GET: Trainees/Create
     public ActionResult Create()
     {
@@ -57,7 +57,7 @@ namespace Gies_Application.Controllers
 
       return View(trainee);
     }
-
+    [Authorize(Roles = "Staff")]
     // GET: Trainees/Edit/5
     public ActionResult Edit(string id)
     {
@@ -101,7 +101,7 @@ namespace Gies_Application.Controllers
       }
       return View(user);
     }
-
+    [Authorize(Roles = "Staff")]
     // GET: Trainees/Delete/5
     public ActionResult Delete(ApplicationUser1 user)
     {

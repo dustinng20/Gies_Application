@@ -1,0 +1,36 @@
+﻿@model Gies_Application.ViewModels.ManagerStaffViewModel
+@{
+	ViewBag.TiTle = "Index";
+}
+@if (Request.IsAuthenticated && User.IsInRole("Trainee"))
+{
+	<h3>Trainee</h3>
+	<div class="panel-body">
+		<table class="table table-hover table-bordered table-condensed" id="Index">
+			<thead>
+				<tr>
+					<td><b>Username</b></td>
+					<td><b>Email</b></td>
+					<td><b>Roles</b></td>
+					<td><b></b></td>
+					<td><b></b></td>
+				</tr>
+			</thead>
+			@foreach (var user in Model.Trainee)
+			{
+				<tr>
+					<td>@user.UserName </td>
+					<td> @user.Email</td>
+					<td> @user.RoleName</td>
+					@*<td>@Html.ActionLink("Edit", "Edit", new { id = user.UserId })</td>*@
+					@if (Request.IsAuthenticated && User.IsInRole("Admin"))
+					{
+						<td>@Html.ActionLink("Edit", "Edit", "Trainers", new { id = user.UserId }, null)</td>
+						<td>@Html.ActionLink("Delete", "Delete", "Trainers", new { id = user.UserId }, null)</td>
+					}
+				</tr>
+			}
+		</table>
+	</div>
+}
+

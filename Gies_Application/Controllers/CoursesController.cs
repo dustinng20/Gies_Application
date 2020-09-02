@@ -1,22 +1,22 @@
-﻿using Gies_Application.Models;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
+using Gies_Application.Models;
 
-namespace Gies_Application.Controllers
+namespace FPT_Training_System.Controllers
 {
   public class CoursesController : Controller
   {
     private ApplicationDbContext1 db = new ApplicationDbContext1();
-
+    [Authorize(Roles = "Staff, Trainee")]
     // GET: Courses
     public ActionResult Index()
     {
       var courses = db.Courses.Include(c => c.Category).Include(c => c.Topic);
       return View(courses.ToList());
     }
-
+    [Authorize(Roles = "Staff")]
     // GET: Courses/Details/5
     public ActionResult Details(int? id)
     {
@@ -31,7 +31,7 @@ namespace Gies_Application.Controllers
       }
       return View(course);
     }
-
+    [Authorize(Roles = "Staff")]
     // GET: Courses/Create
     public ActionResult Create()
     {
@@ -56,7 +56,8 @@ namespace Gies_Application.Controllers
       ViewBag.TopicId = new SelectList(db.Topics, "Id", "Name", course.TopicId);
       return View(course);
     }
-
+    
+    [Authorize(Roles = "Staff")]
     // GET: Courses/Edit/5
     public ActionResult Edit(int? id)
     {
@@ -89,7 +90,7 @@ namespace Gies_Application.Controllers
       ViewBag.TopicId = new SelectList(db.Topics, "Id", "Name", course.TopicId);
       return View(course);
     }
-
+    [Authorize(Roles = "Staff")]
     // GET: Courses/Delete/5
     public ActionResult Delete(int? id)
     {

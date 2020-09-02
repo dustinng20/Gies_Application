@@ -19,7 +19,7 @@ namespace FPT_Training_System.Controllers
     {
       _context = new ApplicationDbContext1();
     }
-
+    [Authorize(Roles = "Staff, Trainer")]
     public ActionResult Index()
     {
       if (User.IsInRole("Staff"))
@@ -35,7 +35,7 @@ namespace FPT_Training_System.Controllers
       }
       return View("Login");
     }
-
+    [Authorize(Roles = "Staff, Trainer")]
     public ActionResult Create()
     {
       //get trainer

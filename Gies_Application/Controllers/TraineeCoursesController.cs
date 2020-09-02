@@ -9,7 +9,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Gies_Application.Controllers
+namespace FPT_Training_System.Controllers
 {
   public class TraineeCoursesController : Controller
   {

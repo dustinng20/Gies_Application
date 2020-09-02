@@ -13,3 +13,4 @@ namespace Gies_Application.Models
 		public ICollection<Course> Courses { get; set; }
 	}
 }
+

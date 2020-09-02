@@ -1,5 +1,8 @@
 ﻿using Gies_Application.Models;
 using Gies_Application.ViewModels;
+using Microsoft.AspNet.Identity;
+using Microsoft.SqlServer.Server;
+using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -13,13 +16,17 @@ namespace Gies_Application.Controllers
 			_context = new ApplicationDbContext1();
 		}
 		// GET: ManagerStaffViewModels
+		[Authorize(Roles = "Staff, Admin, Trainer, Trainee")]
 		public ActionResult Index()
 		{
+
 			var role = (from r in _context.Roles where r.Name.Contains("Trainee") select r).FirstOrDefault();
 			var users = _context.Users.Where(x => x.Roles.Select(y => y.RoleId).Contains(role.Id)).ToList();
 
+
 			var userVM = users.Select(user => new ManagerStaffViewModel
 			{
+
 				UserName = user.UserName,
 				Email = user.Email,
 				RoleName = "Trainee",
@@ -52,6 +59,18 @@ namespace Gies_Application.Controllers
 
 			var model = new ManagerStaffViewModel { Trainee = userVM, Trainer = adminVM, Staff = staffVM };
 			return View(model);
+
+		}
+		[Authorize(Roles = "Staff, Admin, Trainer, Trainee")]
+
+		public ActionResult AccountInfo()
+		{
+			var userId = User.Identity.GetUserId();
+			var user = _context.Users.SingleOrDefault(u => u.Id == userId);
+			var role = user.Roles.FirstOrDefault();
+
+
+			return View();
 		}
 	}
 }

@@ -10,13 +10,13 @@ namespace Gies_Application.Controllers
   public class TopicsController : Controller
   {
     private ApplicationDbContext1 db = new ApplicationDbContext1();
-
+    [Authorize(Roles = "Staff")]
     // GET: Topics
-    public ActionResult Index()
+    public ActionResult Index(string Searching)
     {
-      return View(db.Topics.ToList());
+      return View(db.Topics.Where(x => x.Name.Contains(Searching) || Searching == null).ToList());
     }
-
+    [Authorize(Roles = "Staff")]
     // GET: Topics/Details/5
     public ActionResult Details(int? id)
     {
@@ -31,7 +31,7 @@ namespace Gies_Application.Controllers
       }
       return View(topic);
     }
-
+    [Authorize(Roles = "Staff")]
     // GET: Topics/Create
     public ActionResult Create()
     {
@@ -45,14 +45,23 @@ namespace Gies_Application.Controllers
     {
       if (ModelState.IsValid)
       {
-        db.Topics.Add(topic);
-        db.SaveChanges();
-        return RedirectToAction("Index");
+        if (db.Topics.Any(ac => ac.Name.Equals(topic.Name)))
+        {
+          ModelState.AddModelError("", "There is already one like that");
+          return View(topic);
+        }
+
+        else
+        {
+          db.Topics.Add(topic);
+          db.SaveChanges();
+          return RedirectToAction("Index");
+        }
       }
 
       return View(topic);
     }
-
+    [Authorize(Roles = "Staff")]
     // GET: Topics/Edit/5
     public ActionResult Edit(int? id)
     {
@@ -81,7 +90,7 @@ namespace Gies_Application.Controllers
       }
       return View(topic);
     }
-
+    [Authorize(Roles = "Staff")]
     // GET: Topics/Delete/5
     public ActionResult Delete(int? id)
     {
